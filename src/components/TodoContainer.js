@@ -32,7 +32,7 @@ class TodoContainer extends React.Component {
         }
         return todo;
       })
-    })
+    });
   };
 
 
