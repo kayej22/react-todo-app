@@ -1,6 +1,6 @@
-import Header from "./Header"
 import React from "react"
-import TodosList from "./TodoList"
+import Header from "./Header"
+import TodosList from "./TodosList"
 
 class TodoContainer extends React.Component {
 
@@ -22,7 +22,19 @@ class TodoContainer extends React.Component {
         completed: false
       }
     ]
-  }
+  };
+
+  handleChange = (id) => {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      })
+    })
+  };
+
 
   render () {
     return (
