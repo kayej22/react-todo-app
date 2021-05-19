@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Header from "./Header"
 import TodosList from "./TodosList"
 import InputTodo from "./InputTodo"
@@ -50,6 +50,20 @@ const TodoContainer = () => {
     )
   }
 
+  useEffect(() => {
+    const temp = JSON.stringify(todos)
+    localStorage.setItem("todos", temp)
+  }, [todos])
+
+  // getting stored items
+  const temp = localStorage.getItem("todos")
+  const loadedTodos = JSON.parse(temp)
+
+  if (loadedTodos) {
+    setTodos(loadedTodos)
+  }
+}, [setTodos])
+
   return (
     <div className="container">
       <div className="inner">
@@ -64,6 +78,6 @@ const TodoContainer = () => {
       </div>
     </div>
   )
-}
+
 
 export default TodoContainer
