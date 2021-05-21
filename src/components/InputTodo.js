@@ -1,4 +1,4 @@
-import { faPlusCircle } from "react-icons/fa"
+import { FaPlusCircle } from "react-icons/fa"
 import React, { useState } from "react"
 
 
@@ -39,7 +39,7 @@ import React, { useState } from "react"
             onChange={onChange}
         />
         <button className="input-submit">
-          <faPlusCircle />
+          <FaPlusCircle />
         </button>
       </form>
       
